@@ -53,8 +53,27 @@ test("GET -> 'URL_BASE', should  resturn status  code 200 aand res.body.length =
     const res= await request(app)
     .get(URL_BASE)
 
+    console.log(res.body);
+
     expect(res.status)
     expect(res.body).toBeDefined()
+    expect(res.body)
+    expect(res.body)
+    expect(res.body)
+
+    await category.destroy()
+})
+
+test("GET -> 'URL_BASE?category=id', should  resturn status  code 200 and res.body.length = 1, res.body[0].category to  be  defined and res.body[0].category = category.id", async() => {
+    const res= await request(app)
+    .get(`${URL_BASE}?category=${category.id}`)
+
+    console.log(res.body);
+
+    expect(res.status)
+    expect(res.body).toBeDefined()
+    expect(res.body)
+    expect(res.body)
     expect(res.body)
 
     await category.destroy()
